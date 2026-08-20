@@ -512,8 +512,8 @@ export function Contact() {
               <Label htmlFor="message">Message</Label>
               <Textarea id="message" name="message" required rows={5} placeholder="Say hello..." />
             </div>
-            <Button type="submit" size="lg">
-              Send message
+            <Button type="submit" size="lg" disabled={sending}>
+              {sending ? "Sending..." : "Send message"}
             </Button>
           </form>
         </Reveal>
