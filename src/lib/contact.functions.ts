@@ -23,13 +23,5 @@ export const submitContactMessage = createServerFn({ method: "POST" })
       throw new Error("Could not save your message. Please try again.");
     }
 
-    try {
-      const { sendContactNotification } = await import("./contact-notify.server");
-      await sendContactNotification({ ...data, submissionId: inserted.id });
-    } catch (notifyError) {
-      // The message is stored; a delivery problem should not fail the visitor's submit.
-      console.error("contact notification failed", notifyError);
-    }
-
-    return { ok: true as const };
+    return { ok: true as const, id: inserted.id };
   });

@@ -16,6 +16,8 @@ import {
   Wrench,
 } from "lucide-react";
 import { toast } from "sonner";
+import { useServerFn } from "@tanstack/react-start";
+import { submitContactMessage } from "@/lib/contact.functions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -425,6 +427,9 @@ export function ResumeSection() {
 }
 
 export function Contact() {
+  const [sending, setSending] = useState(false);
+  const submit = useServerFn(submitContactMessage);
+
   return (
     <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
       <SectionHeading
@@ -472,10 +477,27 @@ export function Contact() {
         <Reveal delay={100} className="panel p-7">
           <form
             className="grid gap-4"
-            onSubmit={(event) => {
+            onSubmit={async (event) => {
               event.preventDefault();
-              event.currentTarget.reset();
-              toast.success("Thanks for reaching out! I'll get back to you soon.");
+              const form = event.currentTarget;
+              const fd = new FormData(form);
+              setSending(true);
+              try {
+                await submit({
+                  data: {
+                    name: String(fd.get("name") ?? ""),
+                    email: String(fd.get("email") ?? ""),
+                    message: String(fd.get("message") ?? ""),
+                  },
+                });
+                form.reset();
+                toast.success("Thanks for reaching out! I'll get back to you soon.");
+              } catch (error) {
+                console.error(error);
+                toast.error("Couldn't send your message. Please try again or email me directly.");
+              } finally {
+                setSending(false);
+              }
             }}
           >
             <div className="grid gap-2">
@@ -490,8 +512,8 @@ export function Contact() {
               <Label htmlFor="message">Message</Label>
               <Textarea id="message" name="message" required rows={5} placeholder="Say hello..." />
             </div>
-            <Button type="submit" size="lg">
-              Send message
+            <Button type="submit" size="lg" disabled={sending}>
+              {sending ? "Sending..." : "Send message"}
             </Button>
           </form>
         </Reveal>
