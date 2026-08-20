@@ -475,10 +475,27 @@ export function Contact() {
         <Reveal delay={100} className="panel p-7">
           <form
             className="grid gap-4"
-            onSubmit={(event) => {
+            onSubmit={async (event) => {
               event.preventDefault();
-              event.currentTarget.reset();
-              toast.success("Thanks for reaching out! I'll get back to you soon.");
+              const form = event.currentTarget;
+              const fd = new FormData(form);
+              setSending(true);
+              try {
+                await submit({
+                  data: {
+                    name: String(fd.get("name") ?? ""),
+                    email: String(fd.get("email") ?? ""),
+                    message: String(fd.get("message") ?? ""),
+                  },
+                });
+                form.reset();
+                toast.success("Thanks for reaching out! I'll get back to you soon.");
+              } catch (error) {
+                console.error(error);
+                toast.error("Couldn't send your message. Please try again or email me directly.");
+              } finally {
+                setSending(false);
+              }
             }}
           >
             <div className="grid gap-2">
