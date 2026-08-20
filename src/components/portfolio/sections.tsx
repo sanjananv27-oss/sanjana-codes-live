@@ -425,6 +425,9 @@ export function ResumeSection() {
 }
 
 export function Contact() {
+  const [sending, setSending] = useState(false);
+  const submit = useServerFn(submitContactMessage);
+
   return (
     <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
       <SectionHeading
