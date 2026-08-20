@@ -425,7 +425,6 @@ export function ResumeSection() {
 
 export function Contact() {
   const [sending, setSending] = useState(false);
-  const submit = useServerFn(submitContactMessage);
 
   return (
     <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
@@ -473,6 +472,8 @@ export function Contact() {
 
         <Reveal delay={100} className="panel p-7">
           <form
+            action="https://formspree.io/f/xaewavow"
+            method="POST"
             className="grid gap-4"
             onSubmit={async (event) => {
               event.preventDefault();
@@ -480,15 +481,17 @@ export function Contact() {
               const fd = new FormData(form);
               setSending(true);
               try {
-                await submit({
-                  data: {
-                    name: String(fd.get("name") ?? ""),
-                    email: String(fd.get("email") ?? ""),
-                    message: String(fd.get("message") ?? ""),
-                  },
+                const response = await fetch(form.action, {
+                  method: "POST",
+                  body: fd,
+                  headers: { Accept: "application/json" },
                 });
-                form.reset();
-                toast.success("Thanks for reaching out! I'll get back to you soon.");
+                if (response.ok) {
+                  form.reset();
+                  toast.success("Thanks for reaching out! I'll get back to you soon.");
+                } else {
+                  throw new Error("Formspree submission failed");
+                }
               } catch (error) {
                 console.error(error);
                 toast.error("Couldn't send your message. Please try again or email me directly.");
