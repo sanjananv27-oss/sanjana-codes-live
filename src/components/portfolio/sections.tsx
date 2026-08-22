@@ -521,10 +521,18 @@ export function Contact() {
               <Label htmlFor="message">Message</Label>
               <Textarea id="message" name="message" required rows={5} placeholder="Say hello..." />
             </div>
-            <Button type="submit" size="lg" disabled={sending}>
+            <Button type="submit" size="lg" disabled={sending} className="w-full">
               {sending ? "Sending..." : "Send message"}
             </Button>
           </form>
+          <div className="mt-6 border-t border-border pt-6">
+            <Button asChild size="lg" className="w-full" aria-label="Hire me on Fiverr">
+              <a href={LINKS.fiverr} target="_blank" rel="noreferrer noopener">
+                <Briefcase className="size-4" />
+                Hire Me on Fiverr
+              </a>
+            </Button>
+          </div>
         </Reveal>
       </div>
     </section>
