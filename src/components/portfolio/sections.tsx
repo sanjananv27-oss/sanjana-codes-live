@@ -61,6 +61,12 @@ export function Hero() {
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <Button asChild size="lg">
+              <a href={LINKS.fiverr} target="_blank" rel="noreferrer noopener">
+                <Briefcase className="size-4" />
+                Hire Me on Fiverr
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline">
               <a href="#projects">View My Projects</a>
             </Button>
             <Button asChild size="lg" variant="outline">
