@@ -31,6 +31,7 @@ export const LINKS = {
   linkedin: "https://www.linkedin.com/in/your-profile",
   email: "your.email@example.com",
   resume: "/resume-placeholder.pdf",
+  fiverr: "https://www.fiverr.com/s/VrRm2vV",
 };
 
 export function Hero() {
