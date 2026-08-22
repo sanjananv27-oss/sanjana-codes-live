@@ -137,12 +137,13 @@ export function FloatingHireButton() {
     <Button
       asChild
       size="sm"
-      className="fixed bottom-6 left-6 z-50 hidden gap-2 rounded-full shadow-lg sm:inline-flex"
+      className="fixed bottom-6 left-6 z-50 inline-flex gap-2 rounded-full shadow-lg"
       aria-label="Hire me on Fiverr"
     >
       <a href={FIVERR_GIG} target="_blank" rel="noreferrer noopener">
         <Briefcase className="size-4" />
-        Hire Me on Fiverr
+        <span className="hidden sm:inline">Hire Me on Fiverr</span>
+        <span className="sm:hidden">Hire Me</span>
       </a>
     </Button>
   );
