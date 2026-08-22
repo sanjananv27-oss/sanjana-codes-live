@@ -3,6 +3,7 @@ import {
   Award,
   BookOpen,
   Braces,
+  Briefcase,
   Code2,
   Download,
   ExternalLink,
