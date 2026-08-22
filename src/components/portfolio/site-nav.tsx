@@ -143,7 +143,7 @@ export function FloatingHireButton() {
       <a href={FIVERR_GIG} target="_blank" rel="noreferrer noopener">
         <Briefcase className="size-4" />
         <span className="hidden sm:inline">Hire Me on Fiverr</span>
-        <span className="sm:hidden">Hire Me</span>
+        <span className="inline sm:hidden">Hire Me</span>
       </a>
     </Button>
   );
