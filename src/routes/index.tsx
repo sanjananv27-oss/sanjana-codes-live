@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BackToTop, SiteNav } from "@/components/portfolio/site-nav";
+import { BackToTop, FloatingHireButton, SiteNav } from "@/components/portfolio/site-nav";
 import {
   About,
   Certifications,
@@ -46,6 +46,7 @@ function Index() {
       </main>
       <SiteFooter />
       <BackToTop />
+      <FloatingHireButton />
     </div>
   );
 }
