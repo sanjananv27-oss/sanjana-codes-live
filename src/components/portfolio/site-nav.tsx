@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { ArrowUp, Menu, X } from "lucide-react";
+import { ArrowUp, Briefcase, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const FIVERR_GIG = "https://www.fiverr.com/s/VrRm2vV";
 
 const links = [
   { href: "#about", label: "About" },
