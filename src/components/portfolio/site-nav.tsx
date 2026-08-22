@@ -120,3 +120,30 @@ export function BackToTop() {
     </Button>
   );
 }
+
+export function FloatingHireButton() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 300);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (!show) return null;
+
+  return (
+    <Button
+      asChild
+      size="sm"
+      className="fixed bottom-6 left-6 z-50 hidden gap-2 rounded-full shadow-lg sm:inline-flex"
+      aria-label="Hire me on Fiverr"
+    >
+      <a href={FIVERR_GIG} target="_blank" rel="noreferrer noopener">
+        <Briefcase className="size-4" />
+        Hire Me on Fiverr
+      </a>
+    </Button>
+  );
+}
