@@ -313,7 +313,7 @@ export function Projects() {
               </ul>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button asChild size="sm" variant="outline">
-                  <a href={LINKS.github} target="_blank" rel="noreferrer noopener">
+                  <a href={project.github ?? LINKS.github} target="_blank" rel="noreferrer noopener">
                     <Github className="size-4" />
                     GitHub
                   </a>
