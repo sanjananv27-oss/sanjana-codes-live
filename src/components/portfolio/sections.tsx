@@ -26,6 +26,7 @@ import resultImg from "@/assets/project-result.jpg";
 import bankImg from "@/assets/project-bank.jpg";
 import libraryImg from "@/assets/project-library.jpg";
 import ecommerceImg from "@/assets/project-ecommerce.jpg";
+import expenseImg from "@/assets/project-expense.jpg";
 
 export const LINKS = {
   github: "https://github.com/your-username",
@@ -237,6 +238,14 @@ const projects = [
       "A prototype e-commerce application demonstrating product management and basic shopping functionality.",
     tech: ["Python", "Web Technologies"],
     demo: "https://example.com/demo",
+  },
+  {
+    title: "Expense Tracker",
+    image: expenseImg,
+    description:
+      "A Python-based expense tracking application that helps users record, manage, and monitor their daily expenses.",
+    tech: ["Python"],
+    demo: null as string | null,
   },
 ];
 
