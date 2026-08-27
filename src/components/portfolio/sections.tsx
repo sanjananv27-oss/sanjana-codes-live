@@ -239,6 +239,14 @@ const projects = [
     tech: ["Python", "Web Technologies"],
     demo: "https://example.com/demo",
   },
+  {
+    title: "Expense Tracker",
+    image: expenseImg,
+    description:
+      "A Python-based expense tracking application that helps users record, manage, and monitor their daily expenses.",
+    tech: ["Python"],
+    demo: null as string | null,
+  },
 ];
 
 const filters = ["All", "Python", "OOP", "Web Technologies"];
