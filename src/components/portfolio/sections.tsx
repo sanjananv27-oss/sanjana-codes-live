@@ -214,6 +214,7 @@ const projects = [
       "A Python application for managing student records, calculating results, and displaying student performance.",
     tech: ["Python"],
     demo: null as string | null,
+    github: null as string | null,
   },
   {
     title: "Bank Management System",
@@ -222,6 +223,7 @@ const projects = [
       "A banking application demonstrating object-oriented programming concepts such as classes, objects, encapsulation, and methods.",
     tech: ["Python", "OOP"],
     demo: null as string | null,
+    github: null as string | null,
   },
   {
     title: "Library Management System",
@@ -230,6 +232,7 @@ const projects = [
       "A system for managing books, issuing and returning books, and maintaining library records.",
     tech: ["Python"],
     demo: null as string | null,
+    github: null as string | null,
   },
   {
     title: "E-Commerce Platform Prototype",
@@ -238,6 +241,7 @@ const projects = [
       "A prototype e-commerce application demonstrating product management and basic shopping functionality.",
     tech: ["Python", "Web Technologies"],
     demo: "https://example.com/demo",
+    github: null as string | null,
   },
   {
     title: "Expense Tracker",
@@ -246,6 +250,7 @@ const projects = [
       "A Python-based expense tracking application that helps users record, manage, and monitor their daily expenses.",
     tech: ["Python"],
     demo: null as string | null,
+    github: "https://github.com/sanjananv27-oss/personal-expense-tracker-python.git",
   },
 ];
 
