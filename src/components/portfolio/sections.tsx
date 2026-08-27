@@ -26,6 +26,7 @@ import resultImg from "@/assets/project-result.jpg";
 import bankImg from "@/assets/project-bank.jpg";
 import libraryImg from "@/assets/project-library.jpg";
 import ecommerceImg from "@/assets/project-ecommerce.jpg";
+import expenseImg from "@/assets/project-expense.jpg";
 
 export const LINKS = {
   github: "https://github.com/your-username",
