@@ -1,9 +1,7 @@
 # Roadmap
 
-- [ ] Add Browser History Simulator mini-project card to Projects section
-  - Description: Python mini project simulating browser history using Stack data structure, LIFO operations
-  - Tech: Python, Data Structures, Stack
-  - Features: Visit new pages, Store browsing history, Go back, Handles empty history, Demonstrates LIFO
-  - GitHub link: placeholder (user said "Add your GitHub repository link here")
-  - LinkedIn link: placeholder (user said "Add your LinkedIn post link here")
-  - Keep existing portfolio design/styling
+- [x] Add Browser History Simulator mini-project card to Projects section
+  - Added with dark UI mockup image, description, tech chips (Python / Data Structures / Stack),
+    and a features list unique to this card. GitHub button falls back to profile link,
+    LinkedIn button points to profile until the real post link is provided.
+- Pending from user: replace placeholder GitHub repo link and LinkedIn post link with real URLs.
