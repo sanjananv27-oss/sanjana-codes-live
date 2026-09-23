@@ -27,6 +27,7 @@ import bankImg from "@/assets/project-bank.jpg";
 import libraryImg from "@/assets/project-library.jpg";
 import ecommerceImg from "@/assets/project-ecommerce.jpg";
 import expenseImg from "@/assets/project-expense.jpg";
+import historyImg from "@/assets/project-history.jpg";
 
 export const LINKS = {
   github: "https://github.com/your-username",
@@ -215,6 +216,8 @@ const projects = [
     tech: ["Python"],
     demo: null as string | null,
     github: null as string | null,
+    features: null as string[] | null,
+    linkedin: null as string | null,
   },
   {
     title: "Bank Management System",
@@ -224,6 +227,8 @@ const projects = [
     tech: ["Python", "OOP"],
     demo: null as string | null,
     github: null as string | null,
+    features: null as string[] | null,
+    linkedin: null as string | null,
   },
   {
     title: "Library Management System",
@@ -233,6 +238,8 @@ const projects = [
     tech: ["Python"],
     demo: null as string | null,
     github: null as string | null,
+    features: null as string[] | null,
+    linkedin: null as string | null,
   },
   {
     title: "E-Commerce Platform Prototype",
@@ -242,6 +249,8 @@ const projects = [
     tech: ["Python", "Web Technologies"],
     demo: "https://example.com/demo",
     github: null as string | null,
+    features: null as string[] | null,
+    linkedin: null as string | null,
   },
   {
     title: "Expense Tracker",
@@ -251,6 +260,25 @@ const projects = [
     tech: ["Python"],
     demo: null as string | null,
     github: "https://github.com/sanjananv27-oss/personal-expense-tracker-python.git",
+    features: null as string[] | null,
+    linkedin: null as string | null,
+  },
+  {
+    title: "Browser History Simulator",
+    image: historyImg,
+    description:
+      "A Python mini-project that simulates browser history using the Stack data structure, demonstrating LIFO operations such as visiting pages and going back through browsing history.",
+    features: [
+      "Visit new pages",
+      "Store browsing history",
+      "Go back to previous pages",
+      "Handles empty history",
+      "Demonstrates LIFO principle",
+    ],
+    tech: ["Python", "Data Structures", "Stack"],
+    demo: null as string | null,
+    github: null as string | null,
+    linkedin: LINKS.linkedin,
   },
 ];
 
@@ -301,6 +329,19 @@ export function Projects() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {project.description}
               </p>
+              {project.features ? (
+                <ul className="mt-3 space-y-1.5">
+                  {project.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-center gap-2 text-sm text-muted-foreground"
+                    >
+                      <span className="size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
               <ul className="mt-4 flex flex-wrap gap-2">
                 {project.tech.map((t) => (
                   <li
@@ -318,6 +359,14 @@ export function Projects() {
                     GitHub
                   </a>
                 </Button>
+                {project.linkedin ? (
+                  <Button asChild size="sm" variant="outline">
+                    <a href={project.linkedin} target="_blank" rel="noreferrer noopener">
+                      <Linkedin className="size-4" />
+                      LinkedIn
+                    </a>
+                  </Button>
+                ) : null}
                 {project.demo ? (
                   <Button asChild size="sm">
                     <a href={project.demo} target="_blank" rel="noreferrer noopener">
