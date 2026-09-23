@@ -329,6 +329,19 @@ export function Projects() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {project.description}
               </p>
+              {project.features ? (
+                <ul className="mt-3 space-y-1.5">
+                  {project.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-center gap-2 text-sm text-muted-foreground"
+                    >
+                      <span className="size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
               <ul className="mt-4 flex flex-wrap gap-2">
                 {project.tech.map((t) => (
                   <li
