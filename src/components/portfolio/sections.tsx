@@ -27,6 +27,7 @@ import bankImg from "@/assets/project-bank.jpg";
 import libraryImg from "@/assets/project-library.jpg";
 import ecommerceImg from "@/assets/project-ecommerce.jpg";
 import expenseImg from "@/assets/project-expense.jpg";
+import historyImg from "@/assets/project-history.jpg";
 
 export const LINKS = {
   github: "https://github.com/your-username",
@@ -251,6 +252,23 @@ const projects = [
     tech: ["Python"],
     demo: null as string | null,
     github: "https://github.com/sanjananv27-oss/personal-expense-tracker-python.git",
+  },
+  {
+    title: "Browser History Simulator",
+    image: historyImg,
+    description:
+      "A Python mini-project that simulates browser history using the Stack data structure, demonstrating LIFO operations such as visiting pages and going back through browsing history.",
+    features: [
+      "Visit new pages",
+      "Store browsing history",
+      "Go back to previous pages",
+      "Handles empty history",
+      "Demonstrates LIFO principle",
+    ],
+    tech: ["Python", "Data Structures", "Stack"],
+    demo: null as string | null,
+    github: null as string | null,
+    linkedin: null as string | null,
   },
 ];
 
