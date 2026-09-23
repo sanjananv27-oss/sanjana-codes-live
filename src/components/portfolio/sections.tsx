@@ -216,6 +216,8 @@ const projects = [
     tech: ["Python"],
     demo: null as string | null,
     github: null as string | null,
+    features: null as string[] | null,
+    linkedin: null as string | null,
   },
   {
     title: "Bank Management System",
@@ -225,6 +227,8 @@ const projects = [
     tech: ["Python", "OOP"],
     demo: null as string | null,
     github: null as string | null,
+    features: null as string[] | null,
+    linkedin: null as string | null,
   },
   {
     title: "Library Management System",
@@ -234,6 +238,8 @@ const projects = [
     tech: ["Python"],
     demo: null as string | null,
     github: null as string | null,
+    features: null as string[] | null,
+    linkedin: null as string | null,
   },
   {
     title: "E-Commerce Platform Prototype",
@@ -243,6 +249,8 @@ const projects = [
     tech: ["Python", "Web Technologies"],
     demo: "https://example.com/demo",
     github: null as string | null,
+    features: null as string[] | null,
+    linkedin: null as string | null,
   },
   {
     title: "Expense Tracker",
@@ -252,6 +260,8 @@ const projects = [
     tech: ["Python"],
     demo: null as string | null,
     github: "https://github.com/sanjananv27-oss/personal-expense-tracker-python.git",
+    features: null as string[] | null,
+    linkedin: null as string | null,
   },
   {
     title: "Browser History Simulator",
