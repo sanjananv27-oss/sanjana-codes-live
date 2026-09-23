@@ -30,7 +30,7 @@ import expenseImg from "@/assets/project-expense.jpg";
 import historyImg from "@/assets/project-history.jpg";
 
 export const LINKS = {
-  github: "https://github.com/your-username",
+  github: "https://github.com/sanjananv27-oss",
   linkedin: "https://www.linkedin.com/in/sanjana-nv-987867373",
   email: "your.email@example.com",
   resume: "/resume-placeholder.pdf",
