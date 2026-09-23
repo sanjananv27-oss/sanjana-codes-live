@@ -278,7 +278,7 @@ const projects = [
     tech: ["Python", "Data Structures", "Stack"],
     demo: null as string | null,
     github: null as string | null,
-    linkedin: null as string | null,
+    linkedin: LINKS.linkedin,
   },
 ];
 
@@ -359,6 +359,14 @@ export function Projects() {
                     GitHub
                   </a>
                 </Button>
+                {project.linkedin ? (
+                  <Button asChild size="sm" variant="outline">
+                    <a href={project.linkedin} target="_blank" rel="noreferrer noopener">
+                      <Linkedin className="size-4" />
+                      LinkedIn
+                    </a>
+                  </Button>
+                ) : null}
                 {project.demo ? (
                   <Button asChild size="sm">
                     <a href={project.demo} target="_blank" rel="noreferrer noopener">
